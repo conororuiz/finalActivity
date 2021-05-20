@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+This is the home
+<div>
+    {% for vi in vehicles %}
+        <div style="display: inline-block">
+            <a>Marca: </a>{{ vi.brand }}<br>
+            <a>Placa: </a>{{ vi.license_plate }}<br>
+            <a>Version: </a>{{ vi.version }}<br>
+            <a>Modelo: </a>{{ vi.model }}<br>
+            <a>Tipo de vehiculo: </a>{{ vi.vehicle_type }}<br>
+            <a>Kilometrage: </a>{{ vi.mileage }}<br>
+            <a href="{% url 'edit' vi.version %}">Edit</a>
+            <a href="{% url 'delete' vi.version %}">Delete</a>
+        </div>
+    {% endfor %}
+</div>
+</body>
+</html>
